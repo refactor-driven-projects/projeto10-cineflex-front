@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { Container, Title, Button, Input, Password, SignUpButton, SignUpContainer, StyleGoogleLogin } from './SignInStyle';
 import { GoogleLogin } from '@react-oauth/google';
+import { Container, Title, Button, Input, SignUpButton, SignUpContainer, StyleGoogleLogin,ToggleShowButton, InputContainer, Password } from '../SignInPage/SignInStyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 export default function SignInPage() {
+    const [passwordShown, setPasswordShown] = useState(false);
+    const togglePasswordVisibility = () => {setPasswordShown(!passwordShown);};
     return(
         <>         
             <Container>
                 <Title>Cineflex Plus</Title>
                 <Input placeholder="Email" />
-                <Input placeholder="Password" />
-                <Button>Entrar</Button>
+                <InputContainer>
+                    <Input type={passwordShown ? "text" : "password"} placeholder="Senha" />
+                    <ToggleShowButton onClick={togglePasswordVisibility}>
+                        <FontAwesomeIcon icon={passwordShown ? faEye : faEyeSlash} style={{ color: 'grey' }} />
+                    </ToggleShowButton>
+                </InputContainer>                <Button>Entrar</Button>
                 <Password to="/">Esqueceu a senha?</Password>
                 <SignUpContainer>
                 <StyleGoogleLogin>

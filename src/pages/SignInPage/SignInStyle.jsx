@@ -8,8 +8,7 @@ export const Container = styled.div`
     background-color: black;
     height: 100vh;
     width: 100vw;
-
-`
+`;
 
 export const Input = styled.input`
     width: 300px;
@@ -20,7 +19,7 @@ export const Input = styled.input`
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     padding-left: 10px;
-`
+`;
 
 export const Button = styled.button`
     width: 300px;
@@ -35,7 +34,7 @@ export const Button = styled.button`
     font-weight: SemiBold;
     cursor: pointer;   
     margin-bottom: 20px; 
-`
+`;
 
 export const Title = styled.h1`
     color: #C93904;
@@ -44,7 +43,7 @@ export const Title = styled.h1`
     font-family: 'Poppins', sans-serif;
     margin-bottom: 50px;
     text-shadow: 2px 2px 2px white;
-`
+`;
 
 export const Password = styled.a`
     color: white;
@@ -53,7 +52,8 @@ export const Password = styled.a`
     font-family: 'Poppins', sans-serif;
     margin-bottom: 40px;
     cursor: pointer;
-`
+`;
+
 export const SignUpButton = styled.button`
     width: 300px;
     height: 40px;
@@ -64,7 +64,8 @@ export const SignUpButton = styled.button`
     background-color: #C93904;
     color: white;
     font-family: 'Poppins', sans-serif;
-`
+`;
+
 
 export const SignUpContainer = styled.div`
     display: flex;
@@ -74,7 +75,8 @@ export const SignUpContainer = styled.div`
     background-color: black;
     border-top: 1px solid white;
     padding-top: 40px;
-`
+`;
+
 export const StyleGoogleLogin = styled.div`
     width: 300px;
     height: 40px;
@@ -82,4 +84,30 @@ export const StyleGoogleLogin = styled.div`
     border: none;
     margin-bottom: 10px;
     cursor: pointer;
+`;
+
+export const InputContainer = styled.div`
+    position: relative;
+    width: 300px;
+`;
+
+export const ToggleShowButton = styled.button`
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+`;
+
+export const Error = styled.div`
+    color: red;
+    font-size: 1rem;
+    font-weight: SemiBold;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
 `
