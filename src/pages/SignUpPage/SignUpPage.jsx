@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
-import { Container, Title, Button, Input, SignUpButton, SignUpContainer, StyleGoogleLogin, ToggleShowButton, InputContainer, Error } from '../SignInPage/SignInStyle';
+import { Container, Title, Button, Input, SignUpButton, SignUpContainer, StyleGoogleLogin, ToggleShowButton, InputContainer, Error, Form } from '../SignInPage/SignInStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
@@ -43,7 +43,7 @@ export default function SignUpPage() {
         <>
             <Container>
                 <Title>Cineflex Plus</Title>
-                <form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit}>
                     <Input name="nome" placeholder="Nome Completo" />
                     <Input name="email" placeholder="Email" />
                     <InputContainer>
@@ -52,14 +52,14 @@ export default function SignUpPage() {
                             type={passwordShown ? "text" : "password"}
                             placeholder="Senha"
                         />
-                        <ToggleShowButton onClick={togglePasswordVisibility}>
+                        <ToggleShowButton  type="button" onClick={togglePasswordVisibility}>
                             <FontAwesomeIcon icon={passwordShown ? faEye : faEyeSlash} style={{ color: 'grey' }} />
                         </ToggleShowButton>
                     </InputContainer>
                     <Button type="submit" disabled={isLoading}>
                         {isLoading ? 'Cadastrando...' : 'Cadastrar'}
                     </Button>
-                </form>
+                </Form>
                 <SignUpContainer>
                     <StyleGoogleLogin>
                         <GoogleLogin

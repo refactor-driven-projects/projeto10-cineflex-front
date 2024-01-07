@@ -15,10 +15,11 @@ export default function SignInPage() {
                 <Input placeholder="Email" />
                 <InputContainer>
                     <Input type={passwordShown ? "text" : "password"} placeholder="Senha" />
-                    <ToggleShowButton onClick={togglePasswordVisibility}>
+                    <ToggleShowButton  type="button" onClick={togglePasswordVisibility}>
                         <FontAwesomeIcon icon={passwordShown ? faEye : faEyeSlash} style={{ color: 'grey' }} />
                     </ToggleShowButton>
-                </InputContainer>                <Button>Entrar</Button>
+                </InputContainer>                
+                <Button>Entrar</Button>
                 <Password to="/">Esqueceu a senha?</Password>
                 <SignUpContainer>
                 <StyleGoogleLogin>
