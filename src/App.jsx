@@ -1,11 +1,10 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { pages } from './routes/routes'
-import SignInPage from './pages/SignInPage/SignInPage'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { pages } from './routes/routes';
+import SignInPage from './pages/SignInPage/SignInPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage'
 import AuthContext from './context/authentication';
 import { useState } from 'react';
-import SignUpPage from './pages/SignUpPage/SignUpPage'
-
 
 function App() {
 
