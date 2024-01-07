@@ -1,14 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
-import { Container, Title, Button, Input, Password, SignUpButton, SignUpContainer, StyleGoogleLogin } from './SignInStyle';
 import { GoogleLogin } from '@react-oauth/google';
 import { requisitions } from '../../routes/routes';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { Container, Title, Button, Input, SignUpButton, SignUpContainer, StyleGoogleLogin,ToggleShowButton, InputContainer, Password } from '../SignInPage/SignInStyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 export default function SignInPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [disable, setDisable] = useState(false);
+    const [passwordShown, setPasswordShown] = useState(false);
+    const togglePasswordVisibility = () => {setPasswordShown(!passwordShown);};
 
     function SignIn(e) {
         e.preventDefault();
@@ -38,7 +43,12 @@ export default function SignInPage() {
             <Container>
                 <Title>Cineflex Plus</Title>
                 <Input placeholder="Email" />
-                <Input placeholder="Password" />
+                <InputContainer>
+                    <Input type={passwordShown ? "text" : "password"} placeholder="Senha" />
+                    <ToggleShowButton  type="button" onClick={togglePasswordVisibility}>
+                        <FontAwesomeIcon icon={passwordShown ? faEye : faEyeSlash} style={{ color: 'grey' }} />
+                    </ToggleShowButton>
+                </InputContainer>                
                 <Button>Entrar</Button>
                 <Password to="/">Esqueceu a senha?</Password>
                 <SignUpContainer>

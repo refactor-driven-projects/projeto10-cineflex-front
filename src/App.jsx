@@ -4,6 +4,8 @@ import { pages } from './routes/routes'
 import SignInPage from './pages/SignInPage/SignInPage'
 import AuthContext from './context/authentication';
 import { useState } from 'react';
+import SignUpPage from './pages/SignUpPage/SignUpPage'
+
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path={pages.signin} element={<SignInPage/>} />
+              <Route path={pages.signup} element={<SignUpPage/>} />
             </Routes>
           </BrowserRouter>        
       </AuthContext.Provider>
