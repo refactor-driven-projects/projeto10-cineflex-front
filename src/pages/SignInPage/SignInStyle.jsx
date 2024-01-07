@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Input = styled.input`
     width: 300px;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
@@ -24,11 +24,11 @@ export const Input = styled.input`
 
 export const Button = styled.button`
     width: 300px;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1rem;
     background-color: #C93904;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -56,11 +56,11 @@ export const Password = styled.a`
 `
 export const SignUpButton = styled.button`
     width: 300px;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1rem;
     background-color: #C93904;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -77,7 +77,7 @@ export const SignUpContainer = styled.div`
 `
 export const StyleGoogleLogin = styled.div`
     width: 300px;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
