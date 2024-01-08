@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import { Container, Title, Button, Input, SignUpButton, SignUpContainer, StyleGoogleLogin, ToggleShowButton, InputContainer, Error, Form } from '../SignInPage/SignInStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { requisitions } from '../../routes/routes';
 import axios from 'axios';
 
 export default function SignUpPage() {
@@ -11,6 +12,7 @@ export default function SignUpPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const togglePasswordVisibility = () => { setPasswordShown(!passwordShown); };
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,10 +24,10 @@ export default function SignUpPage() {
             const name = e.target.elements.nome.value;
             const email = e.target.elements.email.value;
             const password = e.target.elements.senha.value;
-            const url = 'URL';
-            const response = await axios.post(url, { name, email, password });
-            console.log('Cadastro realizado com sucesso:', response.data);
-            // Redirecionar ou realizar outras ações após o cadastro bem-sucedido
+            const url = requisitions.signUp;
+            const response = await axios.post(url, { name, email, password, checkpassword: password });
+            alert('Cadastro realizado com sucesso!');
+            navigate('/signin');
         } catch (error) {
             console.error('Erro ao cadastrar:', error);
 
