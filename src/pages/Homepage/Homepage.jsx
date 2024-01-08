@@ -41,6 +41,7 @@ export default function Homepage() {
             setGroupedMovies(grouped);
         } catch (error) {
             console.error('Erro ao buscar filmes:', error);
+            setGroupedMovies({});
         } finally {
             setIsLoading(false);
         }
@@ -64,7 +65,8 @@ export default function Homepage() {
                 <LoadingIndicator>Carregando...</LoadingIndicator>
             ) : (
                 <MoviesContainer>
-                    {Object.values(groupedMovies).map((movie, index) => (
+                    {Object.keys(groupedMovies).length > 0 ? (
+                        Object.values(groupedMovies).map((movie, index) => (   
                         <MovieCardWrapper key={index}>
                             <Tilt options={defaultOptions} style={{width: "300px", height: "400px"}}><MovieImage src={movie.image} alt={movie.title} /></Tilt>
                             <MovieInfo>
@@ -79,7 +81,10 @@ export default function Homepage() {
                                 </div>
                             </MovieInfo>
                         </MovieCardWrapper>
-                    ))}
+                        ))
+                    ) : (
+                        <p>Não há filmes disponíveis para a data selecionada.</p>
+                    )}
                 </MoviesContainer>
             )}
         </Container>
